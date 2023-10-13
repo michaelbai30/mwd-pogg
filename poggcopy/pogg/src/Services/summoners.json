@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "name": "MiLDRABB1T",
+    "level": 186,
+    "queueType": "RANKED_SOLO_5x5",
+    "wins": 94,
+    "losses": 57,
+    "tier": "CHALLENGER",
+    "rank": "I"
+  },
+  {
+    "id": 2,
+    "name": "RoseThorn",
+    "level": 610,
+    "queueType": "RANKED_SOLO_5x5",
+    "wins": 109,
+    "losses": 71,
+    "tier": "CHALLENGER",
+    "rank": "I"
+  },
+  {
+    "id": 3,
+    "name": "JOHNSUN",
+    "level": 353,
+    "queueType": "RANKED_FLEX_SR",
+    "wins": 10,
+    "losses": 8,
+    "tier": "DIAMOND",
+    "rank": "I"
+  },
+  {
+    "id": 4,
+    "name": "100 Tenacity",
+    "level": 355,
+    "queueType": "RANKED_SOLO_5x5",
+    "wins": 74,
+    "losses": 52,
+    "tier": "CHALLENGER",
+    "rank": "I"
+  },
+
+  {
+    "id": 5,
+    "name": "blaberfish2",
+    "level": 443,
+    "queueType": "RANKED_SOLO_5x5",
+    "wins": 97,
+    "losses": 71,
+    "tier": "CHALLENGER",
+    "rank": "I"
+  }
+]
