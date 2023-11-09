@@ -4,7 +4,19 @@ All notable changes to this project will be documented in this file.
  
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
- 
+
+## [0.3.0] - 2023-11-8
+
+### Added
+- [PO.GG] MAJOR: Added authentication services, login, register, logout, protected routes.
+
+### Changed
+- [PO.GG] MINOR: Edited routing to handle authentication
+
+### Note
+- [PO.GG]: Navbar changes based on authentication but only updates upon refreshing the page. I.E, upon registering, logging in, and logging out, refresh the page. 
+
+
 ## [0.2.0] - 2023-10-13
  
 ### Added
