@@ -3,17 +3,48 @@ import IndividualMatch from "./IndividualMatch/IndividualMatch.js";
 import Leaderboards from "./Leaderboards/Leaderboards.js";
 import MatchHistory from "./MatchHistory/MatchHistory.js";
 import Navbar from "./Navbar/Navbar.js";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from "./Home/Home.js";
+import ProtectedRoute from "./ProtectedRoute/ProtectedRoute.js";
+import AuthModule from "./Auth/Auth.js";
+import AuthRegister from "./Auth/AuthRegister";
+import AuthLogin from "./Auth/AuthLogin";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate
+} from "react-router-dom";
 
 export default function Components() {
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/matchhistory" element={<MatchHistory />} />
-        <Route path="/individualmatch" element={<IndividualMatch />} />
-        <Route path="/leaderboards" element={<Leaderboards />} />
+        {/* <Route path="/" element={<Main />} /> */}
+        <Route path="/" element={<Home />} />
+        <Route path="/auth" element={<AuthModule />} />
+        <Route path="/auth/register" element={<AuthRegister />} />
+        <Route path="/auth/login" element={<AuthLogin />} />
+        {/* <Route path="/matchhistory" element={<MatchHistory />} /> */}
+        {/* <Route path="/individualmatch" element={<IndividualMatch />} /> */}
+        {/* <Route path="/leaderboards" element={<Leaderboards />} /> */}
+        <Route
+          path="/matchhistory"
+          element={
+            <ProtectedRoute path="/matchhistory" element={MatchHistory} />
+          }
+        />
+        <Route
+          path="/leaderboards"
+          element={
+            <ProtectedRoute path="/leaderboards" element={Leaderboards} />
+          }
+        />
+        <Route
+          path="/userstats"
+          element={<ProtectedRoute path="/userstats" element={Main} />}
+        />
+        <Route path="*" element={<Navigate to="//" replace />} />
       </Routes>
     </Router>
   );
