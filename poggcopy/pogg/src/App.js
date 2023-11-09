@@ -18,44 +18,4 @@ Parse.serverURL = "https://parseapi.back4app.com";
 
 export default function App() {
   return <Components />;
-
-  // <Router>
-  //   <div>
-  /* <h1>PO.GG, a League of Legends Stats Tracker</h1>
-
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/individual-match">Individual Match</Link>
-            </li>
-            <li>
-              <Link to="/leaderboards">Leaderboards</Link>
-            </li>
-            <li>
-              <Link to="/match-history">Match History</Link>
-            </li>
-          </ul>
-        </nav>
-
-        <Switch>
-          <Route path="/" exact>
-            <Main />
-          </Route>
-          <Route path="/individual-match">
-            <IndividualMatch />
-          </Route>
-          <Route path="/leaderboards">
-            <Leaderboards />
-          </Route>
-          <Route path="/match-history">
-            <MatchHistory />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
-  ); */
 }
-
