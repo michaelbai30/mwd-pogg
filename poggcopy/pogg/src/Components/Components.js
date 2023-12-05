@@ -8,6 +8,13 @@ import ProtectedRoute from "./ProtectedRoute/ProtectedRoute.js";
 import AuthModule from "./Auth/Auth.js";
 import AuthRegister from "./Auth/AuthRegister";
 import AuthLogin from "./Auth/AuthLogin";
+import Match from "./Match/Match.js";
+
+// Bootstrap CSS
+import "bootstrap/dist/css/bootstrap.min.css";
+// Bootstrap Bundle JS
+import "bootstrap/dist/js/bootstrap.bundle.min";
+
 import {
   BrowserRouter as Router,
   Route,
@@ -44,6 +51,12 @@ export default function Components() {
           path="/userstats"
           element={<ProtectedRoute path="/userstats" element={Main} />}
         />
+        <Route
+          path="/match/:matchid"
+          element={
+            <ProtectedRoute path="/match" element={Match} />
+          }
+          />
         <Route path="*" element={<Navigate to="//" replace />} />
       </Routes>
     </Router>

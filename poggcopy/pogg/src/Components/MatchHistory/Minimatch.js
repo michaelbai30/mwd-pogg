@@ -4,62 +4,83 @@ const Minimatch = ({ m }) => {
   //console.log("m:", m);
   //console.log(m[0].info["gameid"])
   return (
-    <div>
-      <h1>Match Type and Won</h1>
+  
+    <div class="container">
+      
+      <h1 style={{textAlign: "center",   }}>Match History</h1>
 
 
-      <ul>
+      <ul style={{listStyleType: "none", margin: "0", padding: "0"}}>
         {m.map((mat) => (
           <li key={mat.info.gameId}>
-            {mat.info.gameMode} 
+            <div class="row" style={{border: "1px solid"}}>
+            <h4 style={{textAlign: "center"}}>{mat.info.gameMode}</h4> 
             {console.log(mat.info.participants)}
-            <button>
-    <a type="button" href={mat.metadata.matchId}> Advanced Stats</a>
+            <button  class="text-decoration-none" style={{borderRadius: "4px", backgroundColor: "#008CBA", textDecoration: "none", color: "white", }}>
+    <a type="button" style={{textDecoration: "none", color: "white"}}href={"/match/" + mat.metadata.matchId}> Advanced Stats</a>
    </button> 
             <br />
-            <ul>
+            <div class="col-md-2" style={{margin: "auto", textAlign: "center"}}> 
+            {mat.info.teams[0].win ? <h4>Team 1 - Win</h4>: <h4>Team 1 - Loss</h4>}
+          </div>
 
-          {/* <h4>Team 1 </h4> */}
 
-          {mat.info.teams[0].win ? <h4>Team 1 - Win</h4> : <h4>Team 1 - Loss</h4>}
+          <div class="col-md-4 d-flex align-items-center justify-content-center">
+          {/* <ul style={{listStyleType: "none", margin: "0", padding: "0"}}> */}
+          <table style={{border: "1px solid", width: "100%"}} >
+                   
+            
             {mat.info.participants.slice(mat.info.participants.length / 2).map((p) => {
             
-              return <li key={p.summonerName}>
-                <img src= {"https://ddragon.leagueoflegends.com/cdn/13.23.1/img/profileicon/" + p.profileIcon + ".png"} height="35" width="35" alt="Profile Icon"/>
-                {p.summonerName}
+               return <tr style={{border: "1px solid", textAlign: "center"}}> 
+                              
+
+                <td style={{border: "1px solid"}}><img src= {"https://ddragon.leagueoflegends.com/cdn/13.23.1/img/profileicon/" + p.profileIcon + ".png"} height="35" width="35" alt="Profile Icon"/></td>
+                <td style={{border: "1px solid"}}>{p.summonerName}</td>
                 
-                <img src= {"https://ddragon.leagueoflegends.com/cdn/13.23.1/img/champion/" + p.championName + ".png"} height="35" width="35" alt={p.championName}/>
+                <td style={{border: "1px solid"}}><img src= {"https://ddragon.leagueoflegends.com/cdn/13.23.1/img/champion/" + p.championName + ".png"} height="35" width="35" alt={p.championName}/></td>
                 
-                {p.kills} / {p.deaths} / {p.assists}
-                </li>
+               <td style={{border: "1px solid"}}> {p.kills} / {p.deaths} / {p.assists}</td>
+                {/* </li> */}
+                </tr>
             })}
+            </table>
+                        {/* </ul> */}
+
+            </div>
+
             <br/>
-            {mat.info.teams[1].win ? <h4>Team 2 - Win</h4> : <h4>Team 2 - Loss</h4>}
+            <div class="col-md-4 d-flex align-items-center justify-content-center">
+            {/* <ul style={{listStyleType: "none", margin: "0", padding: "0"}}> */}
+
+
+            <table style={{border: "1px solid", width: "100%"}}>
+
 
             {mat.info.participants.slice(0,mat.info.participants.length / 2).map((p) => {
             
-            return <li key={p.summonerName}>
-                              <img src= {"https://ddragon.leagueoflegends.com/cdn/13.23.1/img/profileicon/" + p.profileIcon + ".png"} height="35" width="35" alt="Profile Icon"/>
-{p.summonerName}
-<img src= {"https://ddragon.leagueoflegends.com/cdn/13.23.1/img/champion/" + p.championName + ".png"} height="35" width="35" alt={p.championName}/>
-{p.kills} / {p.deaths} / {p.assists}
-</li>
+            return <tr style={{border: "1px solid", textAlign: "center"}}>
+              <td style={{border: "1px solid"}}> <img src= {"https://ddragon.leagueoflegends.com/cdn/13.23.1/img/profileicon/" + p.profileIcon + ".png"} height="35" width="35" alt="Profile Icon"/></td>
+<td style={{border: "1px solid"}}>{p.summonerName}</td>
+<td style={{border: "1px solid"}}><img src= {"https://ddragon.leagueoflegends.com/cdn/13.23.1/img/champion/" + p.championName + ".png"} height="35" width="35" alt={p.championName}/></td>
+<td style={{border: "1px solid"}}>{p.kills} / {p.deaths} / {p.assists}</td>
+</tr>
+{/* </li> */}
           })}
+          </table>
+          
+                    {/* </ul> */}
+                      </div>
+                      <div class="col-md-2" style={{margin: "auto", textAlign: "center"}}> 
+          {mat.info.teams[1].win ? <h4>Team 2 - Win</h4> : <h4>Team 2 - Loss</h4>}
+          </div>
           <br/>
-            </ul>
+            </div>
+<br/>
           </li>
         ))}
       </ul>
 
-      {/* {m.map((match) => {
-        <div>
-          <p>{match.attributes.matchid}</p>
-          <br />
-          <p>
-            {match.attributes.gamemode} | {match.attributes.win}
-          </p>
-        </div>;
-      })} */}
     </div>
   );
 };

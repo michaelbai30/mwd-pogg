@@ -14,6 +14,7 @@ const MatchHistory = () => {
   const [summs, setSumms] = useState([]);
   const [activeSumm, setActiveSumm] = useState("");
   const [matches, setMatches] = useState([]);
+  const [activeMatch, setMat] = useState();
 
   //this function is kinda janky for now
   const handleClick = () => {
@@ -55,15 +56,11 @@ const MatchHistory = () => {
   }, []);
 
   return (
-    <div>
+    <div style={{textAlign: "center"}}>
       <h1>Get Match Data</h1>
-      <p>Select a summoner to get match data on</p>
-      <p>If not here, make sure you have looked them up on the main page</p>
-      <p>
-        Note: if stats don't appear, try waiting a bit and clicking again. Use
-        Protossian as the user for an example
-      </p>
-      <label for="summoner">Summoner to Lookup:</label>
+      <p>Enter the name of a summoner to obtain recent match data from them!</p>
+     
+      {/* <label for="summoner">Summoner to Lookup:</label> */}
 
       <input
         type="text"
@@ -72,6 +69,8 @@ const MatchHistory = () => {
         onChange={(e) => {
           setSummonerName(e.target.value);
         }}
+        style={{width: "75%", border: "3px groove #008CBA", borderRadius: "4px"}}
+        
       >
         {/* {summs.map(function (sname) {
           return (
@@ -82,7 +81,9 @@ const MatchHistory = () => {
         })} */}
 
       </input>
-      <button onClick={handleClick}>Get Match History</button>
+      <br/>        <br/>
+
+      <button onClick={handleClick} style={{borderRadius: "4px", backgroundColor: "#008CBA", textDecoration: "none", color: "white", }}>Get Match History</button>
       {matches.length > 0 && <Minimatch m={matches} />}
     </div>
   );
