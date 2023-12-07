@@ -4,9 +4,14 @@ import {Pie} from "react-chartjs-2"
 
 const Middle = ({page, match}) => {
 
-console.log(page);
+// console.log(page);
 
 const labels2 = ["Team1", "Team2"];
+var names = [];
+var indDamage = [];
+var indElims = [];
+var indCS = [];
+var indGold = [];
 
 var t1escore = 0;
 var t2escore = 0;
@@ -20,7 +25,13 @@ var t2gold = 0;
 for (var i = 0; i < match.info.participants.length; i++) {
 
     console.log(match.info.participants[i]);
-    if (match.info.participants[i].teamId == 100) {
+    names.push(match.info.participants[i].summonerName);
+    indDamage.push(match.info.participants[i].totalDamageDealtToChampions);
+    indElims.push(match.info.participants[i].kills);
+    indCS.push(match.info.participants[i].totalMinionsKilled);
+    indGold.push(match.info.participants[i].goldEarned);
+
+    if (match.info.participants[i].teamId == 200) {
         t1escore += match.info.participants[i].kills;
         t1damage += match.info.participants[i].totalDamageDealtToChampions;
 
@@ -36,7 +47,7 @@ for (var i = 0; i < match.info.participants.length; i++) {
 
     }
 }
-
+console.log(names)
 
 const data = {
   labels: labels2,
@@ -49,6 +60,22 @@ const data = {
       borderColor: "rgb(0,0,255)",
       data: [t1escore, t2escore],
       rotation: 180,
+      maintainAspectRatio: false,
+  
+    },
+  ],
+};
+const indElimsData = {
+  labels: names,
+  datasets: [
+    {
+      label: "Eliminations",
+      backgroundColor: [
+        'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)',
+        'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)'],
+      borderColor: "rgb(0,0,255)",
+      data: indElims,
+      // rotation: 180,
       maintainAspectRatio: false,
   
     },
@@ -73,6 +100,23 @@ const data = {
     ],
   };
 
+  const indDamageData = {
+    labels: names,
+    datasets: [
+      {
+        label: "Eliminations",
+        backgroundColor: [
+          'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)',
+          'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)'],
+        borderColor: "rgb(0,0,255)",
+        data: indDamage,
+        // rotation: 180,
+        maintainAspectRatio: false,
+    
+      },
+    ],
+  };
+
   const csdata = {
     labels: labels2,
     datasets: [
@@ -90,6 +134,22 @@ const data = {
     ],
   };
 
+  const indCSData = {
+    labels: names,
+    datasets: [
+      {
+        label: "Eliminations",
+        backgroundColor: [
+          'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)',
+        'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)'],
+        borderColor: "rgb(0,0,255)",
+        data: indCS,
+        // rotation: 180,
+        maintainAspectRatio: false,
+    
+      },
+    ],
+  };
   const golddata = {
     labels: labels2,
     datasets: [
@@ -106,11 +166,33 @@ const data = {
       },
     ],
   };
+  
+  const indGoldData = {
+    labels: names,
+    datasets: [
+      {
+        label: "Eliminations",
+        backgroundColor: [
+          'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)',
+        'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)'],
+        borderColor: "rgb(0,0,255)",
+        data: indGold,
+        // rotation: 180,
+        maintainAspectRatio: false,
+    
+      },
+    ],
+  };
+
+var gameDate = new Date(match.info.gameStartTimestamp	);
+gameDate = gameDate.toLocaleDateString("en-US")
 
     return (
         <div>
-            {page.page == 1 && <div> <div> <h4>Team Elims</h4></div> <div> <Pie data={data} options={{maintainAspectRatio: false}} height="250px" width="250px"/> </div> <br/> <div><h4>Team Damage</h4> </div> <div> <Pie data={damagedata} options={{maintainAspectRatio: false}} height="250px" width="250px"/>  </div> </div>}
-            {page.page == 2 && <div> <div><h4>Team CS</h4> </div>  <div> <Pie data={csdata} options={{maintainAspectRatio: false}} height="250px" width="250px"/> </div> <br/> <div><h4>Team Gold</h4> </div>  <div> <Pie data={golddata} options={{maintainAspectRatio: false}} height="250px" width="250px"/>  </div> </div>}
+            {page.page != 2 && page.page != 3 && page.page != 4 && <div> <div style={{textAlign: "center"}}> <h4>Team Elims</h4></div> <div> <Pie data={data} options={{maintainAspectRatio: false, }} height="250px" width="250px"/> </div> <br/> <div style={{textAlign: "center"}}><h4>Team Damage</h4> </div> <div> <Pie data={damagedata} options={{maintainAspectRatio: false}} height="250px" width="250px"/>  </div> </div>}
+            {page.page == 2 && <div> <div style={{textAlign: "center"}}><h4>Team CS</h4> </div>  <div> <Pie data={csdata} options={{maintainAspectRatio: false}} height="250px" width="250px"/> </div> <br/> <div style={{textAlign: "center"}}><h4>Team Gold</h4> </div>  <div> <Pie data={golddata} options={{maintainAspectRatio: false}} height="250px" width="250px"/>  </div> </div>}
+            {page.page == 3 && <div> <div style={{textAlign: "center"}}> <h4>Individual Elims</h4></div> <div> <Pie data={indElimsData} options={{maintainAspectRatio: false,  plugins: { legend: {display: false}}}} height="250px" width="250px"/> </div> <br/> <div style={{textAlign: "center"}}><h4>Individual Damage</h4> </div> <div> <Pie data={indDamageData} options={{maintainAspectRatio: false, plugins: { legend: {display: false}}}} height="250px" width="250px"/>  </div> </div>}
+            {page.page == 4 && <div> <div style={{textAlign: "center"}}> <h4>Individual CS</h4></div> <div> <Pie data={indCSData} options={{maintainAspectRatio: false,  plugins: { legend: {display: false}}}} height="250px" width="250px"/> </div> <br/> <div style={{textAlign: "center"}}><h4>Individual Gold</h4> </div> <div> <Pie data={indGoldData} options={{maintainAspectRatio: false, plugins: { legend: {display: false}}}} height="250px" width="250px"/>  </div> </div>}
 
         </div>
     )
