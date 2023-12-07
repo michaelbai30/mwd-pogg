@@ -104,7 +104,7 @@ const indElimsData = {
     labels: names,
     datasets: [
       {
-        label: "Eliminations",
+        label: "Damage",
         backgroundColor: [
           'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)',
           'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)'],
@@ -138,7 +138,7 @@ const indElimsData = {
     labels: names,
     datasets: [
       {
-        label: "Eliminations",
+        label: "CS",
         backgroundColor: [
           'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)',
         'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)'],
@@ -154,7 +154,7 @@ const indElimsData = {
     labels: labels2,
     datasets: [
       {
-        label: "CS",
+        label: "Gold",
         backgroundColor: [
           'rgb(255, 99, 132)',
           'rgb(54, 162, 235)',],
@@ -171,7 +171,7 @@ const indElimsData = {
     labels: names,
     datasets: [
       {
-        label: "Eliminations",
+        label: "Gold",
         backgroundColor: [
           'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)',
         'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)'],
@@ -184,8 +184,7 @@ const indElimsData = {
     ],
   };
 
-var gameDate = new Date(match.info.gameStartTimestamp	);
-gameDate = gameDate.toLocaleDateString("en-US")
+
 
     return (
         <div>
