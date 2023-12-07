@@ -40,8 +40,13 @@ import {singleMatch} from "../../Services/MatchService.js";
       console.log("hi");
       //setPage(1);
     }  
-    var gameDate = new Date(match.info.gameStartTimestamp	);
-gameDate = gameDate.toLocaleDateString("en-US")
+    
+//     var gameDate = new Date(match.info.gameStartTimestamp	);
+// gameDate = gameDate.toLocaleDateString("en-US")
+const getthedate = (vale) => {
+  var v = new Date(vale);
+  return v.toLocaleDateString("en-US") ;
+}
 
  return (
 <div class="container">
@@ -53,7 +58,7 @@ gameDate = gameDate.toLocaleDateString("en-US")
     <div class="row" style={{border: "1px solid"}}>
           <div style={{textAlign: "center"}}>
             {match.info.teams[0].win ? <h1>Team 1 Wins</h1> : <h1>Team 2 Wins</h1>}
-            <h2>{gameDate} | {match.info.gameMode} </h2> 
+            <h2>{ getthedate(match.info.gameStartTimestamp)} | {match.info.gameMode} </h2> 
           </div>
 
        <button class="col-md-6" onClick={() => {setPage({ page: 1 }); console.log(page)}} style={{borderRadius: "4px", backgroundColor: "#008CBA", textDecoration: "none", color: "white", }}>Team Damage</button> 

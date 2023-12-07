@@ -25,12 +25,16 @@ const Navbar = () => {
                 <Link  style={{textDecoration: "none", color: "#424242"}} to="/leaderboards">Leaderboards</Link>
               </li>
               <li style={{display: "block",  color: "white",  textAlign: "center",  padding: "14px 16px",  textDecoration: "none", float: "left"}}>
+                <Link  style={{textDecoration: "none", color: "#424242"}} to="/userstats">User Stats</Link>
+              </li>
+              <li style={{display: "block",  color: "white",  textAlign: "center",  padding: "14px 16px",  textDecoration: "none", float: "left"}}>
                 {" "}
                 <Link  style={{textDecoration: "none"}} to="/">
                   {" "}
                   <button onClick={logOutUser}>Logout</button>{" "}
                 </Link>
               </li>
+              
               {/* <li>
                 {" "}
                 <button onClick={logOutUser}>Logout</button>{" "}
