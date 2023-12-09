@@ -61,6 +61,9 @@ const Navbar = () => {
               <li style={{display: "block",  color: "white",  textAlign: "center",  padding: "14px 16px",  textDecoration: "none", float: "left"}}>
                 <Link  style={{textDecoration: "none", color: "#424242"}} to="/leaderboards">Leaderboards</Link>
               </li>
+              <li style={{display: "block",  color: "white",  textAlign: "center",  padding: "14px 16px",  textDecoration: "none", float: "left"}}>
+                <Link  style={{textDecoration: "none", color: "#424242"}} to="/userstats">User Stats</Link>
+              </li>
             </>
           )}
         </ul>

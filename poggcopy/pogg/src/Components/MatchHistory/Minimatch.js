@@ -1,5 +1,6 @@
 import React from "react";
 //displays match information very basic
+//displays basic match information about the matches given
 const Minimatch = ({ m }) => {
   //console.log("m:", m);
   //console.log(m[0].info["gameid"])
@@ -10,6 +11,7 @@ const Minimatch = ({ m }) => {
       <h1 style={{textAlign: "center",   }}>Match History</h1>
 
 
+{/* one list element per match, which will contain things such as participants, winner, and a button to more details */}
       <ul style={{listStyleType: "none", margin: "0", padding: "0"}}>
         {m.map((mat) => (
           <li key={mat.info.gameId}>

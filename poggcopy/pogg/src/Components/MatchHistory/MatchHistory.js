@@ -16,7 +16,7 @@ const MatchHistory = () => {
   const [matches, setMatches] = useState([]);
   const [activeMatch, setMat] = useState();
 
-  //this function is kinda janky for now
+  //function for button click; 
   const handleClick = () => {
         getSummonerByName(summonerName).then( (nm) => {
           var puuid = nm.puuid;
