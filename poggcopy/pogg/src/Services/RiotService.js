@@ -30,16 +30,7 @@ export const getSummonerByName = (name) => {
   );
 };
 
-//get recent match history by account ID
-//TODO: might have to edit, see https://codepull.com/api/getting-league-of-legends-matches-stats-from-the-riot-api/
-export const getRecentMatchHistory = (accountId) => {
-  //  return axios
-  //   .get(
-  //     `https://na1.api.riotgames.com/lol/match/v4/matchlists/by-account/${accountId}?endIndex=10&api_key=${API_KEY}`
-  //   )
-  //  .then((response) => response.data)
-  // .catch((error) => console.error("Error fetching match history:", error));
-};
+
 
 export const getRankedStats = (summonerId) => {
   return axios

@@ -24,19 +24,7 @@ export const getByName = (textName) => {
       console.log("Error: " + error.code + " " + error.message);
     });
 
-  // const Summoner = Parse.Object.extend("Summoner");
-  // const query = new Parse.Query(Summoner);
-  // query.equalTo("name", name);
-  // return query
-  //   .get(name)
-  //   .then((result) => {
-  //     console.log(result);
-  //     return result;
-  //   })
-  //   .catch(() => {
-  //     console.log("ParseError");
-  //     return null;
-  //   });
+
 };
 
 // CREATE operation - new Summoner

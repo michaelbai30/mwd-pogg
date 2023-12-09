@@ -1,0 +1,43 @@
+.stat-header {
+    color: #000000;
+  }
+  
+  .stat-label {
+    font-weight: bold;
+   
+  }
+  .kills-label { color: #f44336; }
+  .deaths-label { color: #f44336; } 
+  .assists-label { color: #f44336; } 
+  .kda-label { color: #009688; } 
+  .gold-label { color: #ffeb3b; }
+  .cs-label { color: #ff9800; } 
+  .rank-label { color: #607d8b; } 
+  .lp-label { color: #607d8b; } 
+  .wins-label { color: #4caf50; } 
+  .losses-label { color: #f44336; } 
+  .winrate-label { color: #2196f3; } 
+  
+
+  .badge.kda-grey {
+    background-color: #6c757d;
+  }
+  
+  .badge.kda-green {
+    background-color: #28a745;
+  }
+  
+  .badge.kda-lightblue {
+    background-color: #17a2b8;
+  }
+  
+  .badge.kda-red {
+    background-color: #dc3545;
+  }
+
+  .user-stats-title {
+    color: #555;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }

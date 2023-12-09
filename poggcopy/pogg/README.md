@@ -1,3 +1,4 @@
+Note: This is the default README. Our README is in the main folder ../../ from here
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

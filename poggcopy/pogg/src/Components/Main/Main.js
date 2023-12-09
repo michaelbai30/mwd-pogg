@@ -22,13 +22,7 @@ const Main = () => {
 
   //gets up to date summoner info, then if the summoner does not exist creates them in the db
   const handleSearch = () => {
-    // getByName(summonerName).then((res) => {
-    //   if (res) {
-    //     console.log(res);
-    //   } else {
-    //     console.log("None");
-    //   }
-    // });
+   
     getSummonerByName(summonerName).then((data) => {
       if (data) {
         setSummoner(data);
@@ -42,15 +36,7 @@ const Main = () => {
       return null;
     });
 
-    //   .then((summonerId) => {
-    //     getRankedStats(summonerId).then((stats) => {
-    //       setRankedStats(stats);
-    //     });
 
-    // getRecentMatchHistory(summonerId).then(history => {
-    //     setMatchHistory(history.matches);
-    // });
-    // });
   };
 
   return (

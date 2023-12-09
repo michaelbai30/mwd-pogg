@@ -11,8 +11,8 @@ export const getMatches = (puuid) => {
       .then((response) => response.data)
       // Error handling if summoner name not found
       .catch((error) => {
-        alert("Error fetching summoner data");
-        return null;
+        //alert("Error fetching match data");
+        return false;
       })
   );
 };
@@ -34,8 +34,8 @@ export const singleMatch = (matchId) => {
       .then((response) => response.data)
       // Error handling if summoner name not found
       .catch((error) => {
-        alert("Error fetching match data");
-        return null;
+        //alert("Error fetching match data");
+        return false;
       })
   );
 };
@@ -92,3 +92,4 @@ export const getMatchesBySumm = (summ) => {
     return results;
   });
 };
+

@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.4.0] - 2023-12-9
+### Added
+- [PO.GG] MAJOR: Added User Stats subpage
+- [PO.GG] MAJOR: The following pages are now in full implementation: Leaderboards, Match, Match History
+- [PO.GG] MINOR: Added dependencies (such as react-chartjs-2, bootstrap)
+
+
+### Changed
+- [PO.GG] MAJOR: Added styling to various pages
+- [PO.GG] MINOR: Edited API calls to work with promises better
+- [PO.GG] MINOR: Edited routing to accomodate for changed functions
+
+
+
+
+
 ## [0.3.0] - 2023-11-8
 
 ### Added
