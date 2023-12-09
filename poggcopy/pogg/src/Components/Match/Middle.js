@@ -53,6 +53,16 @@ for (var i = 0; i < match.info.participants.length; i++) {
 }
 console.log(names)
 
+//array for background colors
+//may be changed size based on game mode
+var backgroundColorInd = []
+for (var i = 0; i < match.info.participants.length / 2; i++) {
+    backgroundColorInd.push('rgb(54, 162, 235)');
+}
+for (var i = 0; i < match.info.participants.length / 2; i++) {
+  backgroundColorInd.push('rgb(255, 99, 132)');
+}
+
 //build the chart datasets
 const data = {
   labels: labels2,
@@ -75,9 +85,7 @@ const indElimsData = {
   datasets: [
     {
       label: "Eliminations",
-      backgroundColor: [
-        'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)',
-        'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)'],
+      backgroundColor: backgroundColorInd,
       borderColor: "rgb(0,0,255)",
       data: indElims,
       // rotation: 180,
@@ -110,9 +118,7 @@ const indElimsData = {
     datasets: [
       {
         label: "Damage",
-        backgroundColor: [
-          'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)',
-          'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)'],
+        backgroundColor: backgroundColorInd,
         borderColor: "rgb(0,0,255)",
         data: indDamage,
         // rotation: 180,
@@ -144,9 +150,7 @@ const indElimsData = {
     datasets: [
       {
         label: "CS",
-        backgroundColor: [
-          'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)',
-        'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)'],
+        backgroundColor: backgroundColorInd,
         borderColor: "rgb(0,0,255)",
         data: indCS,
         // rotation: 180,
@@ -177,9 +181,7 @@ const indElimsData = {
     datasets: [
       {
         label: "Gold",
-        backgroundColor: [
-          'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)', 'rgb(54, 162, 235)',
-        'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)', 'rgb(255, 99, 132)'],
+        backgroundColor: backgroundColorInd,
         borderColor: "rgb(0,0,255)",
         data: indGold,
         // rotation: 180,
