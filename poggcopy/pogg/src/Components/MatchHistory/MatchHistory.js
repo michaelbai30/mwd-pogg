@@ -19,6 +19,7 @@ const MatchHistory = () => {
   //function for button click; 
   const handleClick = () => {
         getSummonerByName(summonerName).then( (nm) => {
+          if (!nm) return null;
           var puuid = nm.puuid;
           console.log(puuid);
           var sMatches = getMatches(puuid).then( (sMatches) => {
