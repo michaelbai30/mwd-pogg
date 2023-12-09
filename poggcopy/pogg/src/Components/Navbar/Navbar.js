@@ -35,19 +35,11 @@ const Navbar = () => {
                 </Link>
               </li>
               
-              {/* <li>
-                {" "}
-                <button onClick={logOutUser}>Logout</button>{" "}
-              </li> */}
+
             </>
           ) : (
             <>
-              {/* <li>
-                <Link to="./auth/login">Login</Link>
-              </li>
-              <li>
-                <Link to="./auth/register">Register</Link>
-              </li> */}
+    
               <li style={{display: "block",  color: "white",  textAlign: "center",  padding: "14px 16px",  textDecoration: "none", float: "left"}}>
                 <Link  style={{textDecoration: "none", color: "#424242"}} to="/auth">Login/Register</Link>
               </li>

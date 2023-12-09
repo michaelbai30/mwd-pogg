@@ -7,11 +7,7 @@ import { checkUser } from "../Auth/AuthService";
 // You can pass props using the spread operator to throw them on an object if there are too many to break out
 const ProtectedRoute = ({ element: Component, ...rest }) => {
   console.log("element: ", Component);
-  // return (
-  //   <div>
-  //     <p>1</p>
-  //   </div>
-  // );
+
   const navigate = useNavigate();
   const goBackHandler = () => {
     console.log("hello");
@@ -30,11 +26,7 @@ const ProtectedRoute = ({ element: Component, ...rest }) => {
     return (
       //  This will simply redirect upon loading; means they are not logged in
       <p>redirect</p>
-      //shouldn't reach here, should be redirected by useeffect
-      // <button onClick={goBackHandler}>
-      //   direct to home
-      //   {/* <p>should direct back to the home page.</p> */}
-      // </button>
+
     );
   }
 };

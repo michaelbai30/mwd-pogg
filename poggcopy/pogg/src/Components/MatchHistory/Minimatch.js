@@ -2,8 +2,7 @@ import React from "react";
 //displays match information very basic
 //displays basic match information about the matches given
 const Minimatch = ({ m }) => {
-  //console.log("m:", m);
-  //console.log(m[0].info["gameid"])
+
   return (
   
     <div class="container">

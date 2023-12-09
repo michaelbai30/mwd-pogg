@@ -33,9 +33,7 @@ export default function Components() {
         <Route path="/auth" element={<AuthModule />} />
         <Route path="/auth/register" element={<AuthRegister />} />
         <Route path="/auth/login" element={<AuthLogin />} />
-        {/* <Route path="/matchhistory" element={<MatchHistory />} /> */}
-        {/* <Route path="/individualmatch" element={<IndividualMatch />} /> */}
-        {/* <Route path="/leaderboards" element={<Leaderboards />} /> */}
+   
         <Route
           path="/matchhistory"
           element={

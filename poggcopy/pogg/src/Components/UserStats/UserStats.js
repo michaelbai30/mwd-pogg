@@ -125,7 +125,7 @@ const UserStats = () => {
               className="form-control"
               value={summonerName}
               onChange={(e) => setSummonerName(e.target.value)}
-              placeholder="Enter LoL Account Name"
+              placeholder="Enter LoL Account Name (Try bobjenkins1)"
               aria-label="Summoner's name"
               aria-describedby="button-addon2"
             />

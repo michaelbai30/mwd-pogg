@@ -31,17 +31,7 @@ const MatchHistory = () => {
             setMatches(minfo);
           })
         })
-    // getByName(summonerName)
-    //   .then((data) => setActiveSumm(data))
-    //   .then(() => {
-    //     getSummonerByName()
-    //     // getMatchesBySumm(activeSumm).then((lis) => setMatches(lis));
-    //   });
-
-    // .then(getMatches(activeSumm.attributes.puuid))
-    // .then((dat) => populateMatches(dat, activeSumm));
-    //   .then((data) => {populateMatches(data, activeSumm);})
-    // );
+   
   };
 
   useEffect(() => {
@@ -50,16 +40,14 @@ const MatchHistory = () => {
       console.log(tsumms);
     });
 
-    // getById("OXsgE8Mhjc").then((lesson) => {
-    //   console.log(lesson);
-    //   setLesson(lesson);
-    // });
+   
   }, []);
 
   return (
     <div style={{textAlign: "center"}}>
       <h1>Get Match Data</h1>
       <p>Enter the name of a summoner to obtain recent match data from them!</p>
+      <p>(Try bobjenkins1, a top player)</p>
      
       {/* <label for="summoner">Summoner to Lookup:</label> */}
 
@@ -73,13 +61,7 @@ const MatchHistory = () => {
         style={{width: "75%", border: "3px groove #008CBA", borderRadius: "4px"}}
         
       >
-        {/* {summs.map(function (sname) {
-          return (
-            <option key={sname.attributes.summonername}>
-              {sname.attributes.summonername}
-            </option>
-          );
-        })} */}
+     
 
       </input>
       <br/>        <br/>

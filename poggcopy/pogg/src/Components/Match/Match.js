@@ -31,8 +31,7 @@ import {singleMatch} from "../../Services/MatchService.js";
       //setPage(1);
     }  
     
-//     var gameDate = new Date(match.info.gameStartTimestamp	);
-// gameDate = gameDate.toLocaleDateString("en-US")
+
 const getthedate = (vale) => {
   var v = new Date(vale);
   return v.toLocaleDateString("en-US") ;
@@ -41,8 +40,7 @@ const getthedate = (vale) => {
  return (
 <div class="container">
   <br/>
-{/* {console.log(match)}
-{console.log(page)} */}
+
 
 {/* if there is a match, display the participants, stats, and additional information */}
     {(match != false) ? 
@@ -113,10 +111,7 @@ const getthedate = (vale) => {
   {/* this is where the component for the charts is placed */}
 {page && <Middle page={page} match={match}/>}
 </div>
-{/* {(page == 0) && <p>hello0</p>}
-{(page == 1) && <p>hello1</p>}
-{(page == 2) && <p>hello2</p>}
-{(page == 3) && <p>hello3</p>} */}
+
 
 <div class="col-md-4 d-flex align-items-center justify-content-center">
 
