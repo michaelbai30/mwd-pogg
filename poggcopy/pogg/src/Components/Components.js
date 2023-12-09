@@ -9,6 +9,7 @@ import AuthModule from "./Auth/Auth.js";
 import AuthRegister from "./Auth/AuthRegister";
 import AuthLogin from "./Auth/AuthLogin";
 import Match from "./Match/Match.js";
+import UserStats from "./UserStats/UserStats.js";
 
 // Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -49,7 +50,7 @@ export default function Components() {
         />
         <Route
           path="/userstats"
-          element={<ProtectedRoute path="/userstats" element={Main} />}
+          element={<ProtectedRoute path="/userstats" element={UserStats} />}
         />
         <Route
           path="/match/:matchid"

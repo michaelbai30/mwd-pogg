@@ -2,6 +2,8 @@ import React from "react";
 import {Chart} from "chart.js/auto"
 import {Pie} from "react-chartjs-2"
 
+
+//component that has various charts for displaying data
 const Middle = ({page, match}) => {
 
 // console.log(page);
@@ -22,6 +24,8 @@ var t2cs = 0;
 var t1gold = 0;
 var t2gold = 0;
 
+
+//build variables to store the data needed for the chart
 for (var i = 0; i < match.info.participants.length; i++) {
 
     console.log(match.info.participants[i]);
@@ -49,6 +53,7 @@ for (var i = 0; i < match.info.participants.length; i++) {
 }
 console.log(names)
 
+//build the chart datasets
 const data = {
   labels: labels2,
   datasets: [
@@ -185,7 +190,8 @@ const indElimsData = {
   };
 
 
-
+//depending on the charts specified, return two charts. 
+//By default, team damage is displayed
     return (
         <div>
             {page.page != 2 && page.page != 3 && page.page != 4 && <div> <div style={{textAlign: "center"}}> <h4>Team Elims</h4></div> <div> <Pie data={data} options={{maintainAspectRatio: false, }} height="250px" width="250px"/> </div> <br/> <div style={{textAlign: "center"}}><h4>Team Damage</h4> </div> <div> <Pie data={damagedata} options={{maintainAspectRatio: false}} height="250px" width="250px"/>  </div> </div>}
